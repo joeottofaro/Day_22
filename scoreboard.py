@@ -26,3 +26,17 @@ class Scoreboard(Turtle):
         self.player_2_score += 1
         self.clear()
         self.update_score()
+
+    def winner(self):
+        if self.player_1_score > self.player_2_score:
+            self.goto(0, 150)
+            self.write("Player 1 wins!", align="center", font=("Courier", 40, "normal"))
+        else:
+            self.goto(0, 150)
+            self.write("Player 2 wins!", align="center", font=("Courier", 40, "normal"))
+
+    def clear_score(self):
+        self.player_1_score = 0
+        self.player_2_score = 0
+        self.clear()
+        self.update_score()
