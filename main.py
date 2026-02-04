@@ -14,6 +14,7 @@ player_1 = Paddle((350, 0))
 player_2 = Paddle((-350, 0))
 ball = Ball()
 
+
 screen.onkeypress(player_1.go_up, "Up")
 screen.onkeypress(player_1.go_down, "Down")
 screen.onkeypress(player_2.go_up, "w")
@@ -24,5 +25,9 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     ball.move()
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        print("Pong")
+        ball.bounce()
+
 
 screen.exitonclick()
